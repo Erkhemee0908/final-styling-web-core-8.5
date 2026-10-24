@@ -1,0 +1,61 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// ===== Header =====
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 16px;
+  border-bottom: 1px solid $light-accent;
+
+  @include desktop {
+    display: none;
+  }
+
+  &__divider {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include tablet {
+      gap: 20px;
+    }
+  }
+
+  &__burger {
+    @include button-reset;
+    @include hover-brighten;
+    @include focus-outline;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100%;
+  }
+
+  &__action {
+    @include button-reset;
+    @include hover-brighten;
+    @include focus-outline;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    border-radius: 50%;
+
+    &--mobile-view {
+      display: flex;
+    }
+
+    @include tablet {
+      display: flex;
+    }
+  }
+}

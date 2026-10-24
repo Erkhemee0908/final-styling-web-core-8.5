@@ -5,3 +5,37 @@
   font-weight: normal;
   font-style: italic;
 }
+
+$ttlakes-weights: (
+  'Thin': 100,
+  'ExtraLight': 200,
+  'Light': 300,
+  'Regular': 400,
+  'Medium': 500,
+  'DemiBold': 600,
+  'Bold': 700,
+  'ExtraBold': 800,
+  'Black': 900
+);
+@each $name, $weight in $ttlakes-weights {
+  $italic-name: '#{$name}Italic';
+  @if $name == 'Regular' {
+    $italic-name: 'Italic';
+  }
+
+  @font-face {
+    font-family: 'TTLakes';
+    src: url('../fonts/TTLakes-#{$name}.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'TTLakes';
+    src: url('../fonts/TTLakes-#{$italic-name}.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: italic;
+    font-display: swap;
+  }
+}

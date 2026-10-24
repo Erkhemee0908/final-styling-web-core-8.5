@@ -1,3 +1,36 @@
-$background: #24292e;
-$text: #fff;
-$accent: #8ed6fb;
+/* Colors */
+
+$background: #f8f8f8;
+$text: #1b1c21;
+$brand: #ff3e79;
+$accent: #41f6d7;
+$focus: #18544a;
+$light-accent: #d9fff5;
+$light: #7e7e82;
+$divider: #eaeaea;
+$white: #ffffff;
+
+/* Fonts */
+
+$font-main: 'TTLakes', sans-serif;
+$text-base: 14px;
+$text-lg: 16px;
+$line-height-base: 20px;
+$line-height-lg: 24px;
+$letter-spacing-base: 0.2px;
+
+/* Breakpoints */
+$tablet: 768px;
+$desktop: 1120px;
+
+/* Spacing */
+$gap-sm: 24px;
+$gap-md: 32px;
+
+// ===== Motion =====
+$duration: 160ms;
+$easing: ease-out;
+$transition:
+  filter $duration $easing,
+  border-color $duration $easing,
+  outline-color $duration $easing;

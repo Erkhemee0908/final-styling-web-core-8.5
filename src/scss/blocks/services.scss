@@ -1,0 +1,184 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// ===== Services =====
+.services {
+  background-color: $background;
+  padding: 24px 0;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 24px 0;
+
+    @include tablet {
+      gap: 32px;
+      margin: 32px 0;
+    }
+  }
+
+  // ----- Tabs -----
+  &__menu {
+    display: flex;
+    padding-left: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include tablet {
+      padding-left: 24px;
+    }
+
+    @include desktop {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    @include hover-brighten;
+    @include focus-border;
+    display: flex;
+    align-items: start;
+    flex: 0 0 auto;
+    padding: 8px 17px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $light;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background: transparent;
+    border-radius: 8px;
+
+    &--current {
+      background-color: $white;
+      border: 2px solid $accent;
+      border-radius: 8px;
+    }
+
+    &--devices-we-repair-panel {
+      width: 248px;
+    }
+
+    &--additional-services {
+      width: 211px;
+    }
+
+    &--service-prices {
+      width: 143px;
+    }
+
+    &--special-prices {
+      width: 172px;
+    }
+
+    &--reviews {
+      width: 93px;
+    }
+  }
+
+  // ----- Panel -----
+  &__panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 48px;
+      margin: 0 24px;
+    }
+
+    @include desktop {
+      align-items: flex-start;
+    }
+  }
+
+  &__p {
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 34px;
+    line-height: 18px;
+
+    @include tablet {
+      flex: 1 1 0;
+      min-width: 0;
+      margin: 0;
+    }
+
+    @include desktop {
+      margin-top: 16px;
+    }
+  }
+
+  &__medium-paragraph {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__desktop-paragraph {
+    display: none;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+
+  &__read-more {
+    @include hover-brighten;
+    @include focus-border;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: min-content;
+    padding-right: 12px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-wrap: nowrap;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 8px;
+  }
+
+  &__hero {
+    @include tablet {
+      position: relative;
+      flex: 1 1 0;
+      min-width: 0;
+      margin: 0;
+    }
+  }
+
+  &__hero-img {
+    width: 100%;
+    height: auto;
+
+    @include tablet {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    @include desktop {
+      position: static;
+      height: auto;
+    }
+  }
+}

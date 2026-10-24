@@ -1,0 +1,67 @@
+@use 'variables' as *;
+
+// ===== Breakpoints =====
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+// ===== Buttons =====
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+// ===== States =====
+@mixin hover-brighten {
+  transition: $transition;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+@mixin focus-outline {
+  transition: $transition;
+
+  &:focus-visible {
+    outline: 2px solid $focus;
+    outline-offset: 4px;
+  }
+}
+
+@mixin focus-border {
+  transition: $transition;
+
+  &:focus-visible {
+    outline: none;
+    border: 2px solid $focus;
+  }
+}
+
+// ===== Utils =====
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ===== Text =====
+
+@mixin h1 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+}

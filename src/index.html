@@ -1,13 +1,111 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./img/webpack.svg" type="image/svg+xml" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <img src="./img/webpack.svg" alt="Webpack Logo" width="200" />
-    <h3>Welcome to Webpack 5 starter</h3>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./img/webpack.svg" type="image/svg+xml" />
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__section">
+      <button type="button" class="header__burger">
+        <img src="./img/style-project__menu.svg" alt="Menu">
+      </button>
+      <img src="./img/style-project__divider.svg" class="header__divider" alt="">
+      <div class="header__logo">
+        <img src="./img/style-project__logo.svg" alt="CPS logo">
+      </div>
+    </div>
+
+    <nav class="header__section">
+      <button type="button" class="header__action">
+        <img src="./img/style-project__call.svg" alt="Call">
+      </button>
+      <button type="button" class="header__action">
+        <img src="./img/style-project__chat.svg" alt="Chat">
+      </button>
+      <button type="button" class="header__action">
+        <img src="./img/style-project__profile.svg" alt="Profile">
+      </button>
+      <img src="./img/style-project__divider.svg" alt="">
+      <button type="button" class="header__action header__action--mobile-view">
+        <img src="./img/style-project__repair.svg" alt="Submit a request">
+      </button>
+      <button type="button" class="header__action header__action--mobile-view">
+        <img src="./img/style-project__status.svg" alt="Repair status">
+      </button>
+    </nav>
+  </header>
+
+  <main class="services">
+    <div class="title">
+      <img src="./img/style-project__h1-highlight.svg" alt="" class="title__accent">
+      <div class="title__flex-container">
+        <h1 class="title__h1">
+          Services and support
+        </h1>
+        <div class="title__menu">
+          <button type="button" class="title__action">
+            <span>Submit a request</span>
+            <img src="./img/style-project__repair.svg" alt="">
+          </button>
+          <button type="button" class="title__action">
+            <span>Repair status</span>
+            <img src="./img/style-project__status.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="services__body">
+      <div class="services__menu">
+        <button type="button" class="services__item services__item--devices-we-repair-panel services__item--current"
+          id="services__devices-we-repair">Devices we
+          repair</button>
+        <button type="button" class="services__item services__item--additional-services"
+          id="services__additional-services">
+          Additional
+          services</button>
+        <button type="button" class="services__item services__item--service-prices"
+          id="services__service-prices">Service
+          prices</button>
+        <button type="button" class="services__item services__item--special-prices"
+          id="services__special-prices">Special
+          prices</button>
+        <button type="button" class="services__item services__item--reviews" id="services__reviews">Reviews</button>
+      </div>
+
+      <div class="services__panel" id="services__devices-we-repair-panel">
+        <div class="services__p">
+          <p>
+            We are an authorised service centre for Dell equipment repairs. Only with us can you
+            repair your Dell laptop with the official manufacturer's warranty.
+          </p>
+          <!-- TODO: replace the media query show/hide with a JS "Read more" toggle -->
+          <p class="services__medium-paragraph">
+            We have been successfully operating since 1992 and have earned a reputation as a reliable
+            partner<span class="services__desktop-paragraph">, as evidenced by our large number of loyal
+              customers.
+              We take pride in the fact that clients come to us through recommendations and, in turn,
+              recommend us to their family and friends</span>.
+          </p>
+          <button type="button" class="services__read-more">
+            <img src="./img/style-project__read-more.svg" alt="">
+            Read more
+          </button>
+        </div>
+
+        <div class="services__hero">
+          <img class="services__hero-img" src="./img/style-project__hero.jpeg" alt="CPS service centre hallway">
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>
