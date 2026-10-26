@@ -19,7 +19,6 @@
   border: none;
   background: none;
   font: inherit;
-  color: inherit;
   cursor: pointer;
 }
 
@@ -34,10 +33,11 @@
 
 @mixin focus-outline {
   transition: $transition;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
 
   &:focus-visible {
-    outline: 2px solid $focus;
-    outline-offset: 4px;
+    outline-color: $focus;
   }
 }
 
@@ -46,7 +46,21 @@
 
   &:focus-visible {
     outline: none;
-    border: 2px solid $focus;
+    border-color: $focus;
+  }
+}
+
+@mixin hover-brighten-custom($hover-brightness, $active-brightness: null) {
+  transition: $lift-transition;
+
+  &:hover {
+    filter: brightness($hover-brightness);
+  }
+
+  &:active {
+    @if $active-brightness {
+      filter: brightness($active-brightness);
+    }
   }
 }
 
@@ -57,8 +71,27 @@
   align-items: center;
 }
 
-// ===== Text =====
+@mixin flex-row($gap: 0) {
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+}
 
+@mixin flex-column($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// ===== Text =====
 @mixin h1 {
   font-weight: 700;
   font-size: 28px;

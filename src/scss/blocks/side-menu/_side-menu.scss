@@ -1,0 +1,60 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+// ===== Side menu =====
+.side-menu {
+  @include flex-column(32px);
+  @include hide-scrollbar;
+
+  height: -webkit-fill-available;
+  width: 320px;
+  justify-content: space-between;
+  overflow-y: auto;
+  background-color: $white;
+  box-shadow:
+    -16px 0 52px 0 rgba(14, 24, 80, 0.2),
+    2px 0 4px 0 rgba(69, 79, 126, 0.02);
+
+  font-size: $text-lg;
+  line-height: $line-height-lg;
+  letter-spacing: $letter-spacing-sm;
+
+  z-index: 100;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+
+  @include desktop {
+    display: flex;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  &--active {
+    display: flex;
+  }
+
+  button {
+    @include button-reset;
+    @include focus-outline;
+  }
+
+  &__round-button {
+    // @include lift(1.2);
+    @include hover-brighten;
+    @include focus-outline;
+    border-radius: 100%;
+  }
+
+  &__top {
+    @include flex-column(16px);
+  }
+
+  &__close {
+    @include desktop {
+      display: none;
+    }
+  }
+}

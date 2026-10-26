@@ -1,3 +1,4 @@
 import '../scss/style.scss'
+import { initSideMenu } from './side-menu'
 
-console.log('It works!')
+initSideMenu()

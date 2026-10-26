@@ -4,3 +4,9 @@
 @use 'blocks/header';
 @use 'blocks/title';
 @use 'blocks/services.scss';
+
+//Side menu
+@use 'blocks/side-menu/side-menu';
+@use 'blocks/side-menu/menu-header';
+@use 'blocks/side-menu/menu-nav';
+@use 'blocks/side-menu/menu-footer';

@@ -1,0 +1,71 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+// ===== Nav =====
+.menu-nav {
+  @include flex-column;
+
+  // Same layout for the top row and every list item
+  &__top,
+  &__item {
+    @include flex-row;
+    align-items: center;
+  }
+
+  // Same spacing for the top title and every link label
+  &__title,
+  &__label {
+    position: relative;
+    left: -4px;
+    margin: 16px 24px;
+  }
+
+  &__title {
+    color: $light;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__button {
+    @include flex-row;
+    align-items: center;
+    width: 100%;
+    text-align: start;
+    border-radius: 8px;
+    text-decoration: none;
+    color: $text;
+    transition: $lift-transition;
+
+    &:hover {
+      filter: brightness(6);
+    }
+
+    &:active {
+      color: $light;
+      filter: brightness(1.1);
+    }
+
+    // Highlight only shows on the current link
+    .menu-nav__highlight {
+      visibility: hidden;
+    }
+
+    &--current {
+      color: $light;
+
+      .menu-nav__highlight {
+        visibility: visible;
+      }
+
+      &:hover {
+        filter: brightness(1.4);
+      }
+
+      &:active {
+        filter: brightness(1.5);
+      }
+    }
+  }
+}

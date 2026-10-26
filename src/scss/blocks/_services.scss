@@ -6,6 +6,10 @@
   background-color: $background;
   padding: 24px 0;
 
+  @include desktop {
+    padding: 42px 0;
+  }
+
   &__body {
     display: flex;
     flex-direction: column;
@@ -37,6 +41,7 @@
 
     @include desktop {
       flex-wrap: wrap;
+      padding-left: 34px;
     }
   }
 
@@ -98,6 +103,7 @@
 
     @include desktop {
       align-items: flex-start;
+      margin: 0 34px;
     }
   }
 

@@ -1,5 +1,6 @@
 // Every block file loads the variables it uses: @use is file-scoped
 @use '../variables' as *;
+@use '../mixins' as *;
 
 * {
   margin: 0;
@@ -14,6 +15,11 @@ body {
   line-height: $line-height-base;
   letter-spacing: $letter-spacing-base;
   color: $text;
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+  }
 }
 img {
   display: block;

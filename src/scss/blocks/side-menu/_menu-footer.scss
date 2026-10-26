@@ -1,0 +1,43 @@
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+// ===== Footer =====
+.footer {
+  @include flex-column(42px);
+  margin: 0 0 32px 24px;
+
+  &__contact {
+    @include flex-column(16px);
+  }
+
+  &__actions {
+    @include flex-row(16px);
+  }
+
+  &__contact-info {
+    @include flex-column(12px);
+  }
+
+  &__phone {
+    @include h1;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &__i18n {
+    @include flex-row(9px);
+  }
+
+  &__i18n-button {
+    @include hover-brighten-custom(6, 4);
+    @include focus-outline;
+    font-weight: 500;
+
+    // Comes after the base hover so it overrides it
+    &--current {
+      @include hover-brighten-custom(1.4, 1.2);
+      @include focus-outline;
+      color: $light;
+    }
+  }
+}

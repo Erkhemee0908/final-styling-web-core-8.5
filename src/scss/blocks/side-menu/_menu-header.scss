@@ -1,0 +1,19 @@
+@use '../../mixins' as *;
+
+// ===== Menu header =====
+// Renamed from .header so it doesn't clash with the page header
+.menu-header {
+  @include flex-row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 16px;
+
+  @include desktop {
+    padding: 34px 40px 20px 22px;
+  }
+
+  &__left {
+    @include flex-row(16px);
+    align-items: center;
+  }
+}

@@ -11,12 +11,115 @@
 </head>
 
 <body>
+  <aside class="side-menu">
+    <div class="side-menu__top">
+
+      <header class="menu-header">
+        <div class="menu-header__left">
+          <button class="side-menu__round-button side-menu__close" type="button">
+            <img src="img/style-project__close.svg" alt="close menu">
+          </button>
+
+          <div>
+            <img src="img/style-project__logo.svg" alt="CPS logo">
+          </div>
+        </div>
+
+        <button class="side-menu__round-button" type="button">
+          <img src="img/style-project__search.svg" alt="search">
+        </button>
+      </header>
+
+      <nav class="menu-nav">
+        <ul class="menu-nav__list">
+          <li class="menu-nav__item">
+            <a class="menu-nav__button menu-nav__button--current" href="#Equipment-repair">
+              <img class="menu-nav__highlight" src="img/style-project__menu-highlight.svg" alt="">
+              <span class="menu-nav__label">Equipment repair</span>
+            </a>
+          </li>
+          <li class="menu-nav__item">
+            <a class="menu-nav__button" href="#Services">
+              <img class="menu-nav__highlight" src="img/style-project__menu-highlight.svg" alt="">
+              <span class="menu-nav__label">Services and support</span>
+            </a>
+          </li>
+          <li class="menu-nav__item">
+            <a class="menu-nav__button" href="#Corporate">
+              <img class="menu-nav__highlight" src="img/style-project__menu-highlight.svg" alt="">
+              <span class="menu-nav__label">Corporate clients</span>
+            </a>
+          </li>
+          <li class="menu-nav__item">
+            <a class="menu-nav__button" href="#Equipment-sellers">
+              <img class="menu-nav__highlight" src="img/style-project__menu-highlight.svg" alt="">
+              <span class="menu-nav__label">Equipment sellers</span>
+            </a>
+          </li>
+          <li class="menu-nav__item">
+            <a class="menu-nav__button" href="#Partners">
+              <img class="menu-nav__highlight" src="img/style-project__menu-highlight.svg" alt="">
+              <span class="menu-nav__label">Partners</span>
+            </a>
+          </li>
+          <li class="menu-nav__item">
+            <a class="menu-nav__button" href="#Manufacturers">
+              <img class="menu-nav__highlight" src="img/style-project__menu-highlight.svg" alt="">
+              <span class="menu-nav__label">Manufacturers</span>
+            </a>
+          </li>
+          <li class="menu-nav__item">
+            <a class="menu-nav__button" href="#Service-centers">
+              <img class="menu-nav__highlight" src="img/style-project__menu-highlight.svg" alt="">
+              <span class="menu-nav__label">Our service centres</span>
+            </a>
+          </li>
+          <li class="menu-nav__item">
+            <a class="menu-nav__button" href="#Contacts">
+              <img class="menu-nav__highlight" src="img/style-project__menu-highlight.svg" alt="">
+              <span class="menu-nav__label">Contacts</span>
+            </a>
+          </li>
+
+      </nav>
+    </div>
+
+
+    <footer class="footer">
+      <div class="footer__contact">
+
+        <div class="footer__actions">
+          <button class="side-menu__round-button" type="button">
+            <img src="img/style-project__call.svg" alt="Call">
+          </button>
+          <button class="side-menu__round-button" type="button">
+            <img src="img/style-project__chat.svg" alt="Chat">
+          </button>
+          <button class="side-menu__round-button" type="button">
+            <img src="img/style-project__profile.svg" alt="Profile">
+          </button>
+        </div>
+
+        <div class="footer__contact-info">
+          <div class="footer__email">mail@cps.com</div>
+          <div class="footer__phone">8 800 890 8900</div>
+        </div>
+      </div>
+
+      <div class="footer__i18n">
+        <button type="button" class="footer__i18n-button footer__i18n-button--current">RU</button>
+        <button type="button" class="footer__i18n-button">EN</button>
+        <button type="button" class="footer__i18n-button">CH</button>
+      </div>
+    </footer>
+
+  </aside>
   <header class="header">
     <div class="header__section">
-      <button type="button" class="header__burger">
+      <button type="button" class="header__burger" id='side-menu-open'>
         <img src="./img/style-project__menu.svg" alt="Menu">
       </button>
-      <img src="./img/style-project__divider.svg" class="header__divider" alt="">
+      <!-- <img src="./img/style-project__divider.svg" class="header__divider" alt=""> -->
       <div class="header__logo">
         <img src="./img/style-project__logo.svg" alt="CPS logo">
       </div>
@@ -41,71 +144,74 @@
       </button>
     </nav>
   </header>
-
-  <main class="services">
-    <div class="title">
-      <img src="./img/style-project__h1-highlight.svg" alt="" class="title__accent">
-      <div class="title__flex-container">
-        <h1 class="title__h1">
-          Services and support
-        </h1>
-        <div class="title__menu">
-          <button type="button" class="title__action">
-            <span>Submit a request</span>
-            <img src="./img/style-project__repair.svg" alt="">
-          </button>
-          <button type="button" class="title__action">
-            <span>Repair status</span>
-            <img src="./img/style-project__status.svg" alt="">
-          </button>
+  <main>
+    <section class="services">
+      <div class="title">
+        <img src="./img/style-project__h1-highlight.svg" alt="" class="title__accent">
+        <div class="title__flex-container">
+          <h1 class="title__h1">
+            Services and support
+          </h1>
+          <div class="title__menu">
+            <button type="button" class="title__action">
+              <span>Submit a request</span>
+              <img src="./img/style-project__repair.svg" alt="">
+            </button>
+            <button type="button" class="title__action">
+              <span>Repair status</span>
+              <img src="./img/style-project__status.svg" alt="">
+            </button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="services__body">
-      <div class="services__menu">
-        <button type="button" class="services__item services__item--devices-we-repair-panel services__item--current"
-          id="services__devices-we-repair">Devices we
-          repair</button>
-        <button type="button" class="services__item services__item--additional-services"
-          id="services__additional-services">
-          Additional
-          services</button>
-        <button type="button" class="services__item services__item--service-prices"
-          id="services__service-prices">Service
-          prices</button>
-        <button type="button" class="services__item services__item--special-prices"
-          id="services__special-prices">Special
-          prices</button>
-        <button type="button" class="services__item services__item--reviews" id="services__reviews">Reviews</button>
-      </div>
-
-      <div class="services__panel" id="services__devices-we-repair-panel">
-        <div class="services__p">
-          <p>
-            We are an authorised service centre for Dell equipment repairs. Only with us can you
-            repair your Dell laptop with the official manufacturer's warranty.
-          </p>
-          <!-- TODO: replace the media query show/hide with a JS "Read more" toggle -->
-          <p class="services__medium-paragraph">
-            We have been successfully operating since 1992 and have earned a reputation as a reliable
-            partner<span class="services__desktop-paragraph">, as evidenced by our large number of loyal
-              customers.
-              We take pride in the fact that clients come to us through recommendations and, in turn,
-              recommend us to their family and friends</span>.
-          </p>
-          <button type="button" class="services__read-more">
-            <img src="./img/style-project__read-more.svg" alt="">
-            Read more
-          </button>
+      <div class="services__body">
+        <div class="services__menu">
+          <button type="button" class="services__item services__item--devices-we-repair-panel services__item--current"
+            id="services__devices-we-repair">Devices we
+            repair</button>
+          <button type="button" class="services__item services__item--additional-services"
+            id="services__additional-services">
+            Additional
+            services</button>
+          <button type="button" class="services__item services__item--service-prices"
+            id="services__service-prices">Service
+            prices</button>
+          <button type="button" class="services__item services__item--special-prices"
+            id="services__special-prices">Special
+            prices</button>
+          <button type="button" class="services__item services__item--reviews" id="services__reviews">Reviews</button>
         </div>
 
-        <div class="services__hero">
-          <img class="services__hero-img" src="./img/style-project__hero.jpeg" alt="CPS service centre hallway">
+        <div class="services__panel" id="services__devices-we-repair-panel">
+          <div class="services__p">
+            <p>
+              We are an authorised service centre for Dell equipment repairs. Only with us can you
+              repair your Dell laptop with the official manufacturer's warranty.
+            </p>
+            <!-- TODO: replace the media query show/hide with a JS "Read more" toggle -->
+            <p class="services__medium-paragraph">
+              We have been successfully operating since 1992 and have earned a reputation as a reliable
+              partner<span class="services__desktop-paragraph">, as evidenced by our large number of loyal
+                customers.
+                We take pride in the fact that clients come to us through recommendations and, in turn,
+                recommend us to their family and friends</span>.
+            </p>
+            <button type="button" class="services__read-more">
+              <img src="./img/style-project__read-more.svg" alt="">
+              Read more
+            </button>
+          </div>
+
+          <div class="services__hero">
+            <img class="services__hero-img" src="./img/style-project__hero.jpeg" alt="CPS service centre hallway">
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
   </main>
+
 </body>
 
 </html>

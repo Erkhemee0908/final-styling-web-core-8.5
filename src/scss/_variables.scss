@@ -5,6 +5,7 @@ $text: #1b1c21;
 $brand: #ff3e79;
 $accent: #41f6d7;
 $focus: #18544a;
+$menu-focus: rgb(194, 115, 157);
 $light-accent: #d9fff5;
 $light: #7e7e82;
 $divider: #eaeaea;
@@ -18,6 +19,7 @@ $text-lg: 16px;
 $line-height-base: 20px;
 $line-height-lg: 24px;
 $letter-spacing-base: 0.2px;
+$letter-spacing-sm: -0.2px;
 
 /* Breakpoints */
 $tablet: 768px;
@@ -34,3 +36,6 @@ $transition:
   filter $duration $easing,
   border-color $duration $easing,
   outline-color $duration $easing;
+$lift-transition:
+  filter $duration $easing,
+  transform $duration $easing;
