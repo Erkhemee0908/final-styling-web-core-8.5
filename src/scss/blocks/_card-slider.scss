@@ -304,6 +304,7 @@
       grid-template-columns: 1fr;
       align-content: start; // rows sit at the top when cards differ in height
       gap: 12px;
+      align-content: space-between;
       padding: $gap-xs;
       font-weight: 400;
 
