@@ -1,0 +1,61 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.service-prices {
+  display: flex;
+  flex-direction: column;
+
+  background-color: $background;
+
+  @include tablet {
+    gap: $gap-sm;
+  }
+
+  @include desktop-wide {
+    gap: $gap-md;
+  }
+
+  &__extra {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0 $gap-xs;
+    gap: 58px;
+    @include tablet {
+      margin: 0 $gap-sm;
+      gap: 16px;
+    }
+
+    @include desktop-wide {
+      margin: 0 $gap-md;
+      gap: 16px;
+    }
+  }
+
+  &__vat {
+    max-width: 420px;
+  }
+  &__get-commercial {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    text-decoration: none;
+    color: $text;
+
+    gap: 38px;
+    @include tablet {
+      gap: 95px;
+    }
+    img {
+      display: inline;
+    }
+    span {
+      font-weight: 500;
+      font-size: $text-lg;
+      line-height: $line-height-lg;
+      letter-spacing: $letter-spacing-sm;
+    }
+  }
+}

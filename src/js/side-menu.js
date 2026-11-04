@@ -1,3 +1,5 @@
+import { makeSwitchable } from './switchable'
+
 const DESKTOP_QUERY = '(max-width: 1120px)'
 const ACTIVE_CLASS = 'side-menu--active'
 
@@ -51,16 +53,6 @@ export function initSideMenu() {
   desktop.addEventListener('change', (event) => {
     if (!event.matches) closeMenu()
   })
-
-  function makeSwitchable(buttons, currentClass, onSelect) {
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-        buttons.forEach((other) => other.classList.remove(currentClass))
-        button.classList.add(currentClass)
-        if (onSelect) onSelect(button)
-      })
-    })
-  }
 
   makeSwitchable(
     menu.querySelectorAll('.menu-nav__button'),

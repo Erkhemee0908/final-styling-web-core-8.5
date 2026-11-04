@@ -10,6 +10,12 @@ $light-accent: #d9fff5;
 $light: #7e7e82;
 $divider: #eaeaea;
 $white: #ffffff;
+$border: #e6e6e6;
+
+/* Slider bullets */
+$bullet: #dddddd;
+$bullet-active: #b5b6bc;
+$bullet-size: 12px;
 
 /* Fonts */
 
@@ -25,7 +31,10 @@ $letter-spacing-sm: -0.2px;
 $tablet: 768px;
 $desktop: 1120px;
 
+$desktop-wide: 1230px;
+
 /* Spacing */
+$gap-xs: 16px;
 $gap-sm: 24px;
 $gap-md: 32px;
 

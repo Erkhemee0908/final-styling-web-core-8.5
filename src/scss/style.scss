@@ -10,3 +10,11 @@
 @use 'blocks/side-menu/menu-header';
 @use 'blocks/side-menu/menu-nav';
 @use 'blocks/side-menu/menu-footer';
+
+// Brands
+@use 'blocks/card-slider';
+@use 'blocks/brands';
+// Service prices
+@use 'blocks/service-prices';
+// Footer
+@use 'blocks/footer';

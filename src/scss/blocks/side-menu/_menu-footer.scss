@@ -2,10 +2,10 @@
 @use '../../mixins' as *;
 
 // ===== Footer =====
-.footer {
+.side-menu-footer {
   @include flex-column(42px);
   margin: 0 0 32px 24px;
-
+  background-color: $white;
   &__contact {
     @include flex-column(16px);
   }
@@ -20,7 +20,7 @@
 
   &__phone {
     @include h1;
-    font-size: 24px;
+
     line-height: 32px;
   }
 
@@ -33,7 +33,6 @@
     @include focus-outline;
     font-weight: 500;
 
-    // Comes after the base hover so it overrides it
     &--current {
       @include hover-brighten-custom(1.4, 1.2);
       @include focus-outline;

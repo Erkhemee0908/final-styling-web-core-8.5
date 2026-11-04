@@ -1,0 +1,47 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.footer {
+  background-color: $background;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+  font-family: $font-main;
+  font-size: $text-base;
+  font-weight: 500;
+  line-height: $gap-xs;
+  letter-spacing: 0;
+  color: $light;
+
+  padding: $gap-xs 0;
+  border-top: 1px solid $light-accent;
+
+  text-align: center;
+
+  gap: $gap-xs;
+
+  @include tablet {
+    align-items: flex-start;
+    text-align: left;
+
+    padding: $gap-sm;
+    gap: $gap-sm;
+  }
+
+  @include desktop-wide {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 32px 32px 21px 32px;
+  }
+
+  a {
+    color: $light;
+    text-decoration: none;
+    :visited {
+      color: $light;
+      text-decoration: none;
+    }
+  }
+}

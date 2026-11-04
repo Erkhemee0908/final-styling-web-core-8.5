@@ -1,0 +1,412 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+@mixin visible-cards($mobile, $tablet, $desktop, $display: flex) {
+  $item: '.card-slider__item';
+  $button: '.card-slider__expand-button';
+
+  // Mobile slider
+  #{$item}:nth-child(n) {
+    display: $display;
+  }
+
+  @if $mobile {
+    #{$item}:nth-child(n + #{$mobile + 1}) {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    #{$item}:nth-child(n) {
+      display: $display;
+    }
+
+    @if $tablet {
+      #{$item}:nth-child(n + #{$tablet + 1}) {
+        display: none;
+      }
+
+      &:has(#{$item}:nth-child(#{$tablet + 1})) #{$button} {
+        display: flex;
+      }
+
+      &:not(:has(#{$item}:nth-child(#{$tablet + 1}))) #{$button} {
+        display: none;
+      }
+    }
+  }
+
+  @include desktop-wide {
+    #{$item}:nth-child(n) {
+      display: $display;
+    }
+
+    @if $desktop {
+      #{$item}:nth-child(n + #{$desktop + 1}) {
+        display: none;
+      }
+
+      &:has(#{$item}:nth-child(#{$desktop + 1})) #{$button} {
+        display: flex;
+      }
+
+      &:not(:has(#{$item}:nth-child(#{$desktop + 1}))) #{$button} {
+        display: none;
+      }
+    }
+  }
+
+  // Show all cards when expanded (tablet and up)
+  &.card-slider--expanded #{$item} {
+    @include tablet {
+      display: $display;
+    }
+  }
+}
+
+// ===== Card slider =====
+.card-slider {
+  // Card size: mobile width, height
+  --card-width: 240px;
+  --card-height: 72px;
+
+  // Card align-item
+  --card-align-item: center;
+
+  // Card padding y
+  --card-padding-y: 0;
+
+  // Grid columns from tablet up
+  --columns-tablet: 3;
+  --columns-desktop: 4;
+
+  // Swiper reads these custom properties
+  --swiper-theme-color: #{$bullet-active};
+  --swiper-pagination-bullet-inactive-color: #{$bullet};
+  --swiper-pagination-bullet-size: #{$bullet-size};
+
+  position: relative;
+  overflow: hidden;
+  background-color: $background;
+  border-top: 1px solid $light-accent;
+  @include text-lg(500);
+  letter-spacing: $letter-spacing-sm;
+
+  // Fade on the right edge (mobile slider only)
+  &::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: 0;
+    z-index: 2;
+    width: 24px;
+    height: 99%;
+
+    background: linear-gradient(
+      270deg,
+      $background 16.84%,
+      rgba($background, 0.0001) 100%
+    );
+    pointer-events: none;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__title {
+    @include text-lg;
+    padding: $gap-xs;
+    text-transform: uppercase;
+    color: $light;
+    letter-spacing: $letter-spacing-sm;
+    background: linear-gradient(90deg, $background 0%, $white 98.61%);
+
+    @include tablet {
+      padding-left: $gap-sm;
+    }
+
+    @include desktop {
+      padding-left: $gap-md;
+    }
+  }
+
+  &__slider {
+    overflow: visible;
+    padding: $gap-xs $gap-xs 52px;
+
+    @include tablet {
+      padding: $gap-sm;
+    }
+
+    @include desktop {
+      padding: $gap-sm $gap-md;
+    }
+  }
+
+  &__list {
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(var(--columns-tablet), 1fr);
+      gap: $gap-xs $gap-sm;
+    }
+
+    @include desktop-wide {
+      grid-template-columns: repeat(var(--columns-desktop), 1fr);
+      gap: $gap-xs $gap-md;
+    }
+  }
+
+  &__item {
+    width: var(--card-width);
+    height: var(--card-height);
+    background-color: $white;
+    border: 1px solid $border;
+    border-radius: 8px;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  // Default: 9 cards on mobile, 6 on tablet, 8 on large screens
+  @include visible-cards(9, 6, 8);
+
+  &__link {
+    @include focus-outline($menu-focus, 2px);
+    display: flex;
+    align-items: var(--card-align-item);
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--card-padding-y) $gap-xs;
+    border-radius: 8px;
+    text-decoration: none !important;
+    color: inherit;
+    text-wrap: nowrap;
+
+    &--offset {
+      padding-left: 26px;
+    }
+  }
+
+  &__logo-img {
+    display: block;
+    object-position: left center;
+  }
+
+  &__text {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+  }
+
+  &__arrow {
+    display: block;
+  }
+
+  &__pagination {
+    bottom: 0 !important;
+    margin-bottom: 16px;
+    line-height: 0;
+
+    @include tablet {
+      display: none;
+    }
+
+    .swiper-pagination-bullet {
+      margin: 0 6px !important;
+      background-color: $bullet;
+      border-radius: 100%;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $bullet-active;
+    }
+  }
+
+  &__expand-button {
+    @include button-reset;
+    @include text-lg(500);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    height: 24px;
+    padding-right: 12px;
+
+    @include tablet {
+      display: flex;
+      margin: 0 $gap-sm $gap-md;
+    }
+
+    @include desktop {
+      margin: 0 $gap-md $gap-md;
+    }
+  }
+
+  &__expand-image {
+    width: auto;
+    height: 24px;
+  }
+
+  // ===== Variants =====
+  &--devices {
+    --card-height: 160px;
+    --columns-desktop: 4;
+    --card-align-item: end;
+    --card-padding-y: 16px;
+
+    @include visible-cards(9, 3, 4);
+  }
+
+  // ===== Prices: cards (slider) below desktop, table on desktop =====
+  // Needs data-slider-until="1120" on the section so the slider stays on for tablet
+
+  &--prices {
+    --card-width: 260px;
+    --card-height: auto;
+    --table-columns: 2fr 1fr 1fr 96px; // last one is the button column
+    .card-slider__slider {
+      padding: $gap-xs $gap-xs 44px;
+    }
+    .card-slider__list {
+      height: auto; // Swiper sets 100%, which stretches the cards
+
+      // Table body
+      @include desktop {
+        display: block;
+        overflow: hidden;
+        background-color: $white;
+        border-radius: 8px;
+      }
+    }
+
+    // Mobile slider: 9 cards. Tablet: 6 cards with Show all. Desktop: every row
+    @include visible-cards(9, 3, null, grid);
+
+    @include desktop {
+      // Every row from 1120px (the tablet limit would still apply until desktop-wide)
+      .card-slider__item:nth-child(n) {
+        display: grid;
+      }
+
+      // No Show all button in the table
+      &:has(.card-slider__item:nth-child(n)) .card-slider__expand-button {
+        display: none;
+      }
+    }
+
+    // Card: three rows stacked (name, price, term + button)
+    .card-slider__item {
+      grid-template-columns: 1fr;
+      align-content: start; // rows sit at the top when cards differ in height
+      gap: 12px;
+      padding: $gap-xs;
+      font-weight: 400;
+
+      // Table row: every cell becomes a column
+      @include desktop {
+        grid-template-columns: var(--table-columns);
+        align-items: center;
+        gap: $gap-xs;
+        width: auto;
+        padding: 16px 24px;
+        border: none;
+        border-bottom: 1px solid $divider;
+        border-radius: 0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .card-slider__cell {
+      @include flex-column(4px);
+
+      // Room for a 2-line name, so the price row lines up across cards
+      &--name {
+        margin-bottom: 18px;
+        @include desktop {
+          margin-bottom: 0;
+          min-height: 0;
+        }
+      }
+    }
+
+    // Bottom row: term and button, half the width each
+    .card-slider__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      gap: 8px;
+
+      // On desktop the wrapper disappears, so its two children
+      // become columns of the table row
+      @include desktop {
+        display: contents;
+      }
+    }
+
+    .card-slider__label {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0;
+      color: $light;
+
+      @include desktop {
+        display: none; // the table head shows the labels
+      }
+    }
+
+    .card-slider__value {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: $letter-spacing-base;
+    }
+
+    // Column titles, only on desktop
+    .card-slider__head {
+      display: none;
+
+      @include desktop {
+        display: grid;
+        grid-template-columns: var(--table-columns);
+        gap: $gap-xs;
+        padding: 0 $gap-xs 12px;
+        font-size: $text-base;
+        line-height: $line-height-base;
+        font-weight: 400;
+        color: $light;
+      }
+    }
+
+    .card-slider__order {
+      @include hover-brighten;
+      @include focus-outline($menu-focus, 2px);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 8px 4px 34px;
+      font-size: 12px;
+      line-height: 24px;
+      font-weight: 700;
+      letter-spacing: -0.15px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $white;
+      background-color: $brand;
+      border-radius: 16px;
+      justify-content: center; // fills its half on cards, text centered
+
+      @include desktop {
+        justify-self: end;
+      }
+    }
+  }
+}

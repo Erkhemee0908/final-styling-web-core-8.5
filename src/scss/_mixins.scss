@@ -13,6 +13,12 @@
   }
 }
 
+@mixin desktop-wide {
+  @media (min-width: $desktop-wide) {
+    @content;
+  }
+}
+
 // ===== Buttons =====
 @mixin button-reset {
   padding: 0;
@@ -31,13 +37,13 @@
   }
 }
 
-@mixin focus-outline {
+@mixin focus-outline($color: $focus, $offset: 4px) {
   transition: $transition;
   outline: 2px solid transparent;
-  outline-offset: 4px;
+  outline-offset: $offset;
 
   &:focus-visible {
-    outline-color: $focus;
+    outline-color: $color;
   }
 }
 
@@ -92,9 +98,15 @@
 }
 
 // ===== Text =====
+@mixin text-lg($weight: 400) {
+  font-weight: $weight;
+  font-size: $text-lg;
+  line-height: $line-height-lg;
+}
+
 @mixin h1 {
   font-weight: 700;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 40px;
   letter-spacing: -0.6px;
 }
