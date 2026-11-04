@@ -94,12 +94,12 @@
 
     @include tablet {
       flex-direction: row;
+      align-items: flex-start;
       gap: 48px;
       margin: 0 24px;
     }
 
     @include desktop {
-      align-items: flex-start;
       margin: 0 34px;
     }
   }
@@ -167,10 +167,8 @@
 
   &__hero {
     @include tablet {
-      position: relative;
       flex: 1 1 0;
       min-width: 0;
-      margin: 0;
     }
   }
 
@@ -179,10 +177,6 @@
     height: auto;
 
     @include tablet {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      object-fit: cover;
       border-radius: 16px;
     }
 
