@@ -37,11 +37,8 @@
   }
 
   a {
+    @include hover-text;
     color: $light;
     text-decoration: none;
-    :visited {
-      color: $light;
-      text-decoration: none;
-    }
   }
 }

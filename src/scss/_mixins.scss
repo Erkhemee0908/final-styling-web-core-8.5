@@ -37,6 +37,14 @@
   }
 }
 
+@mixin hover-text {
+  transition: color $duration $easing;
+
+  &:hover {
+    color: $brand;
+  }
+}
+
 @mixin focus-outline($color: $focus, $offset: 4px) {
   transition: $transition;
   outline: 2px solid transparent;

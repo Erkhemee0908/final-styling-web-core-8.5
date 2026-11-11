@@ -29,12 +29,12 @@
   }
 
   &__i18n-button {
-    @include hover-brighten-custom(6, 4);
+    @include hover-text;
     @include focus-outline;
     font-weight: 500;
 
     &--current {
-      @include hover-brighten-custom(1.4, 1.2);
+      @include hover-text;
       @include focus-outline;
       color: $light;
     }

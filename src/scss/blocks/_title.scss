@@ -44,6 +44,7 @@
   &__action {
     @include button-reset;
     @include hover-brighten;
+    @include hover-text;
     @include focus-outline;
     display: flex;
     align-items: center;

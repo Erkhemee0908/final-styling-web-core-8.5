@@ -36,6 +36,7 @@
     max-width: 420px;
   }
   &__get-commercial {
+    @include hover-text;
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -57,5 +58,13 @@
       line-height: $line-height-lg;
       letter-spacing: $letter-spacing-sm;
     }
+  }
+
+  &__get-commercial img {
+    transition: transform $duration $easing;
+  }
+
+  &__get-commercial:hover img {
+    transform: translateX(4px);
   }
 }

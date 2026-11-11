@@ -185,6 +185,15 @@
     text-decoration: none !important;
     color: inherit;
     text-wrap: nowrap;
+    transition: box-shadow $duration $easing;
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(14, 24, 80, 0.1);
+    }
+
+    &:hover .card-slider__arrow {
+      transform: translateX(4px);
+    }
 
     &--offset {
       padding-left: 26px;
@@ -204,6 +213,7 @@
 
   &__arrow {
     display: block;
+    transition: transform $duration $easing;
   }
 
   &__pagination {
@@ -230,6 +240,7 @@
   &__expand-button {
     @include button-reset;
     @include text-lg(500);
+    @include hover-text;
     display: none;
     justify-content: center;
     align-items: center;

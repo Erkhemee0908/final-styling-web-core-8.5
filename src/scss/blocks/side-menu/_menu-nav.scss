@@ -38,9 +38,11 @@
     color: $text;
     transition: $lift-transition;
 
-    &:hover {
-      filter: brightness(6);
-    }
+    // &:hover {
+    //   filter: brightness(6);
+    // }
+
+    @include hover-text;
 
     &:active {
       color: $light;
