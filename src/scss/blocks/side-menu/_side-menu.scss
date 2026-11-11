@@ -58,12 +58,8 @@
     }
   }
 
-  button {
-    @include button-reset;
-    @include focus-outline;
-  }
-
   &__round-button {
+    @include button-reset;
     // @include lift(1.2);
     @include hover-brighten;
     @include focus-outline;

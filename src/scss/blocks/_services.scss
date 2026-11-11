@@ -128,7 +128,7 @@
     overflow: hidden;
     transition: max-height $duration * 2 $easing;
 
-    p + p {
+    .services__paragraph + .services__paragraph {
       margin-top: var(--line-height);
     }
 

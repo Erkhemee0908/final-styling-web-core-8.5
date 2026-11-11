@@ -29,6 +29,7 @@
   }
 
   &__i18n-button {
+    @include button-reset;
     @include hover-text;
     @include focus-outline;
     font-weight: 500;

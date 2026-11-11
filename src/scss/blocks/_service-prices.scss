@@ -49,22 +49,21 @@
     @include tablet {
       gap: 95px;
     }
-    img {
-      display: inline;
-    }
-    span {
-      font-weight: 500;
-      font-size: $text-lg;
-      line-height: $line-height-lg;
-      letter-spacing: $letter-spacing-sm;
-    }
   }
 
-  &__get-commercial img {
+  &__get-commercial-text {
+    font-weight: 500;
+    font-size: $text-lg;
+    line-height: $line-height-lg;
+    letter-spacing: $letter-spacing-sm;
+  }
+
+  &__get-commercial-icon {
+    display: inline;
     transition: transform $duration $easing;
   }
 
-  &__get-commercial:hover img {
+  &__get-commercial:hover &__get-commercial-icon {
     transform: translateX(4px);
   }
 }
