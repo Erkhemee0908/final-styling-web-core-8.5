@@ -21,21 +21,41 @@
   letter-spacing: $letter-spacing-sm;
 
   z-index: 100;
-
   position: fixed;
   top: 0;
   left: 0;
-  display: none;
+  display: flex;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition:
+    transform $duration * 2 $easing,
+    visibility 0s linear $duration * 2;
 
+  // Opening: visible straight away, then slides in
+  &--active {
+    transform: translateX(0);
+    visibility: visible;
+    transition:
+      transform $duration * 2 $easing,
+      visibility 0s;
+  }
+
+  // Desktop: part of the layout, always shown, no slide
   @include desktop {
-    display: flex;
     position: sticky;
     top: 0;
     flex-shrink: 0;
+    transform: none;
+    visibility: visible;
+    transition: none;
   }
 
-  &--active {
-    display: flex;
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &--active {
+      transition: none;
+    }
   }
 
   button {
