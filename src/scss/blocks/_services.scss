@@ -188,19 +188,24 @@
       flex: 1 1 0;
       min-width: 0;
     }
+
+    @include desktop {
+      flex-grow: 1.12;
+    }
   }
 
   &__hero-img {
     width: 100%;
     height: auto;
+    aspect-ratio: 320 / 177;
+    object-fit: cover;
 
     @include tablet {
       border-radius: 16px;
     }
 
     @include desktop {
-      position: static;
-      height: auto;
+      aspect-ratio: 530 / 306;
     }
   }
 }
