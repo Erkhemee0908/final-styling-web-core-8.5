@@ -281,7 +281,11 @@
     --card-height: auto;
     --table-columns: 2fr 1fr 1fr 96px; // last one is the button column
     .card-slider__slider {
-      padding: $gap-xs $gap-xs 44px;
+      padding-bottom: 44px;
+
+      @include tablet {
+        padding-bottom: $gap-sm;
+      }
     }
     .card-slider__list {
       height: auto; // Swiper sets 100%, which stretches the cards
