@@ -44,6 +44,10 @@ main {
 
   gap: 24px;
   padding-top: 24px;
+
+  max-width: $page-max-width;
+  margin: 0 auto;
+
   @include desktop {
     gap: 50px;
     padding-top: 42px;
