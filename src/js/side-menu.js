@@ -61,7 +61,7 @@ export function initSideMenu() {
   )
 
   makeSwitchable(
-    menu.querySelectorAll('.footer__i18n-button'),
-    'footer__i18n-button--current'
+    menu.querySelectorAll('.side-menu-footer__i18n-button'),
+    'side-menu-footer__i18n-button--current'
   )
 }
