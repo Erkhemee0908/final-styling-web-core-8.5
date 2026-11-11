@@ -133,7 +133,7 @@
 
   &__slider {
     overflow: visible;
-    padding: $gap-xs $gap-xs 52px;
+    padding: $gap-xs $gap-xs 36px;
 
     @include tablet {
       padding: $gap-sm;
@@ -218,7 +218,6 @@
 
   &__pagination {
     bottom: 0 !important;
-    margin-bottom: 16px;
     line-height: 0;
 
     @include tablet {
@@ -254,7 +253,7 @@
     }
 
     @include desktop {
-      margin: 0 $gap-md $gap-md;
+      margin: 0 $gap-md;
     }
   }
 
@@ -279,9 +278,15 @@
   &--prices {
     --card-width: 260px;
     --card-height: auto;
-    --table-columns: 2fr 1fr 1fr 96px; // last one is the button column
+    --table-columns: 2fr 1fr 1fr 96px;
+
+    margin-bottom: 24px;
+    @include tablet {
+      margin-bottom: 0;
+    }
+
     .card-slider__slider {
-      padding-bottom: 44px;
+      padding-bottom: 28px; // 16px gap + 12px dots
 
       @include tablet {
         padding-bottom: $gap-sm;

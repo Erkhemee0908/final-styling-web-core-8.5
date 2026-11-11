@@ -7,10 +7,6 @@
 
   background-color: $background;
 
-  @include tablet {
-    gap: $gap-sm;
-  }
-
   @include desktop-wide {
     gap: $gap-md;
   }
