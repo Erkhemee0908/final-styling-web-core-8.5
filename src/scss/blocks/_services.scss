@@ -118,7 +118,7 @@
     margin: 0 16px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: $gap-md;
     line-height: 18px;
 
     @include tablet {
@@ -148,6 +148,10 @@
 
     @include tablet {
       --lines: 8;
+    }
+
+    @include desktop {
+      --line-height: 20px;
     }
   }
 
