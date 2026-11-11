@@ -67,7 +67,7 @@
   }
 
   &__top {
-    @include flex-column(16px);
+    @include flex-column;
   }
 
   &__close {
