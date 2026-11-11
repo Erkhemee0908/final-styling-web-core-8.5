@@ -34,19 +34,24 @@ button {
   letter-spacing: -$letter-spacing-base;
 }
 
-main {
+.page {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   background-color: $background;
-
-  gap: 24px;
-  padding-top: 24px;
 
   max-width: $page-max-width;
   margin: 0 auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  gap: 24px;
+  padding-top: 24px;
 
   @include desktop {
     gap: 50px;
