@@ -6,7 +6,8 @@
   @include flex-column(32px);
   @include hide-scrollbar;
 
-  height: -webkit-fill-available;
+  height: 100vh;
+  height: 100dvh;
   width: 320px;
   justify-content: space-between;
   overflow-y: auto;
@@ -28,7 +29,8 @@
 
   @include desktop {
     display: flex;
-    position: relative;
+    position: sticky;
+    top: 0;
     flex-shrink: 0;
   }
 
