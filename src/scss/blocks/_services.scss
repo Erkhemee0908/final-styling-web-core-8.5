@@ -16,6 +16,11 @@
       gap: 32px;
       margin: 32px 0 0 0;
     }
+
+    @include desktop {
+      gap: 8px;
+      margin: 10px 0 0 0;
+    }
   }
 
   // ----- Tabs -----
@@ -38,6 +43,7 @@
     @include desktop {
       flex-wrap: wrap;
       padding-left: 34px;
+      gap: 6px;
     }
   }
 
@@ -47,7 +53,7 @@
     display: flex;
     align-items: start;
     flex: 0 0 auto;
-    padding: 8px 17px;
+    padding: 6px 17px;
     font-family: inherit;
     font-weight: 500;
     font-size: 16px;
@@ -77,12 +83,16 @@
       width: 143px;
     }
 
+    &--service-center-addresses {
+      width: 233px;
+    }
+
     &--special-prices {
       width: 172px;
     }
 
     &--reviews {
-      width: 93px;
+      width: 103px;
     }
   }
 
@@ -115,6 +125,10 @@
       flex: 1 1 0;
       min-width: 0;
       margin: 0;
+    }
+
+    @include desktop {
+      margin-top: 8px;
     }
   }
 
