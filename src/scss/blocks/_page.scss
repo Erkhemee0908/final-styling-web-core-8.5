@@ -52,9 +52,11 @@ main {
 
   gap: 24px;
   padding-top: 24px;
-
+  padding-bottom: 40px;
   @include desktop {
     gap: 50px;
     padding-top: 42px;
+
+    padding-bottom: 50px;
   }
 }
