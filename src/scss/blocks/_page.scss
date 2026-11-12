@@ -16,6 +16,9 @@ body {
   letter-spacing: $letter-spacing-base;
   color: $text;
 
+  max-width: $page-max-width;
+  margin: 0 auto;
+
   @include desktop {
     display: flex;
     flex-direction: row;
@@ -40,9 +43,6 @@ button {
   display: flex;
   flex-direction: column;
   background-color: $background;
-
-  max-width: $page-max-width;
-  margin: 0 auto;
 }
 
 main {
