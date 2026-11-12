@@ -133,7 +133,7 @@
 
   &__slider {
     overflow: visible;
-    padding: $gap-xs $gap-xs 36px;
+    padding: $gap-xs $gap-xs 28px;
 
     @include tablet {
       padding: $gap-sm;
@@ -285,13 +285,6 @@
       margin-bottom: 0;
     }
 
-    .card-slider__slider {
-      padding-bottom: 28px; // 16px gap + 12px dots
-
-      @include tablet {
-        padding-bottom: $gap-sm;
-      }
-    }
     .card-slider__list {
       height: auto; // Swiper sets 100%, which stretches the cards
 
