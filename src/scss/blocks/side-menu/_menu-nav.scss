@@ -17,10 +17,10 @@
   &__label {
     position: relative;
     left: -4px;
-    margin: 12px 24px; // links 48px apart (24px line + 2 × 12px)
+    margin: 12px 16px;
 
     @include desktop {
-      margin: 13px 24px; // 50px apart
+      margin: 13px 24px;
     }
   }
 

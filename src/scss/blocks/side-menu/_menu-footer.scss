@@ -4,7 +4,14 @@
 // ===== Footer =====
 .side-menu-footer {
   @include flex-column(42px);
-  margin: 0 0 32px 24px;
+
+  margin: 0 0 32px 16px;
+
+  @include desktop {
+    margin: 0 0 32px 32px;
+    margin-left: 19px;
+  }
+
   background-color: $white;
   &__contact {
     @include flex-column(16px);
@@ -29,7 +36,8 @@
   }
 
   &__i18n {
-    @include flex-row(9px);
+    @include flex-row(7px);
+    margin-left: 2px;
   }
 
   &__i18n-button {
