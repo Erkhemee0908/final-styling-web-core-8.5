@@ -42,10 +42,10 @@
     color: $text;
     transition: $lift-transition;
 
+    font-weight: 500;
     // &:hover {
     //   filter: brightness(6);
     // }
-
     @include hover-text;
 
     &:active {

@@ -24,6 +24,10 @@
     line-height: 32px;
   }
 
+  &__email {
+    font-weight: 500;
+  }
+
   &__i18n {
     @include flex-row(9px);
   }
